@@ -74,7 +74,7 @@ jobs:
         export VERSION=${{github.ref_name}}
         bash build/extract-release-notes.sh >> release-notes.md
 
-    - name: Set-prerelease-flag
+    - name: set-prerelease-flag
       run: |
         if [[ "${GITHUB_REF}" =~ ^refs/tags/v[0-9]+\.[0-9]+\.[0-9]+-rc.*$ ]]; then
           echo "prerelease=true" >> $GITHUB_ENV
